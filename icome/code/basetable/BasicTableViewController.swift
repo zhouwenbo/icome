@@ -9,7 +9,8 @@
 import Foundation
 import UIKit
 
-class BasicTableViewController : UIViewController, UITableViewDataSource, UITableViewDelegate {
+
+class BasicTableViewController : BaseViewController, UITableViewDataSource, UITableViewDelegate {
     
     let identifier:String  = "language_cell"
     
@@ -17,7 +18,7 @@ class BasicTableViewController : UIViewController, UITableViewDataSource, UITabl
     
     var tableView:UITableView?
     
-    var languages : [String] = [String]()
+    var languages:[String] = [String]()
     
     
     
@@ -25,7 +26,7 @@ class BasicTableViewController : UIViewController, UITableViewDataSource, UITabl
         super.viewDidLoad()
         initData()
         //因为这个带导航栏，所以需要有64的Y轴偏移
-        let rect : CGRect = CGRect(x: self.view.bounds.origin.x, y: self.view.bounds.origin.y+64, width: self.view.bounds.size.width, height: self.view.bounds.size.height-64)
+        let rect : CGRect = CGRect(x: self.view.bounds.origin.x, y: self.view.bounds.origin.y, width: self.view.bounds.size.width, height: self.view.bounds.size.height-64)
         tableView = UITableView.init(frame: rect, style: UITableViewStyle.Plain)
         tableView!.delegate = self
         tableView!.dataSource = self

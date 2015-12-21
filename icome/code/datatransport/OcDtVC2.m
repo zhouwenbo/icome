@@ -18,6 +18,7 @@
     IBOutlet UITextField *text2;
     
     
+    IBOutlet UIButton *button2;
 }
 
 @end

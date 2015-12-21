@@ -25,9 +25,12 @@
 
 
 -(void) viewDidLoad{
+    
+    //self.navigationController.navigationBar.translucent = NO;
+
     [self initData];
     NSLog(@"self.view.left= %f and self.view.width = %f ",self.view.left, self.view.width);
-    CGRect rect = CGRectMake(self.view.left, self.view.top + 64, self.view.width, self.view.height-64);
+    CGRect rect = CGRectMake(self.view.left, self.view.top, self.view.width, self.view.height-64);
     _tableView = [[UITableView alloc]initWithFrame:rect style:UITableViewStyleGrouped];
     _tableView.dataSource = self;
     _tableView.delegate=self;

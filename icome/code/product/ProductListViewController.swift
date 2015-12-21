@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 
-class ProductListViewController : UIViewController,UITableViewDataSource, UITableViewDelegate {
+class ProductListViewController : BaseViewController,UITableViewDataSource, UITableViewDelegate {
     
     let identifier:String = "cell_identifier"
     
@@ -21,7 +21,7 @@ class ProductListViewController : UIViewController,UITableViewDataSource, UITabl
     override func viewDidLoad() {
         super.viewDidLoad()
         initData()
-        let rect:CGRect = CGRect(x: self.view.bounds.origin.x, y: self.view.bounds.origin.y+64, width: self.view.bounds.size.width, height: self.view.bounds.size.height-64)
+        let rect:CGRect = CGRect(x: self.view.bounds.origin.x, y: self.view.bounds.origin.y, width: self.view.bounds.size.width, height: self.view.bounds.size.height-64)
         tableView = UITableView.init(frame: rect, style: .Plain)
         //行定高则用这种写法
         tableView.rowHeight = 140

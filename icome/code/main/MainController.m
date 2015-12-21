@@ -26,11 +26,11 @@
 
 -(void) viewDidLoad{
     [super viewDidLoad];
-    
+    self.title = @"icome";
     [self setBackButton];
     
     [self initData];
-    CGRect rect = CGRectMake(self.view.bounds.origin.x, self.view.bounds.origin.y+64, self.view.bounds.size.width, self.view.bounds.size.height-64);
+    CGRect rect = CGRectMake(self.view.bounds.origin.x, self.view.bounds.origin.y, self.view.bounds.size.width, self.view.bounds.size.height);
     _tableView = [[UITableView alloc] initWithFrame:rect style:UITableViewStylePlain];
     [_tableView registerClass:UITableViewCell.self forCellReuseIdentifier:identifier];
     _tableView.dataSource = self;
@@ -56,7 +56,10 @@
     [_models addObject:[[UIModel alloc] initWithTitle:@"oc 项目列表" sbId:@"ProductTableViewController"]];
     [_models addObject:[[UIModel alloc] initWithTitle:@"swift vc之间数据传递" sbId:@"DataTransportVC1"]];
     [_models addObject:[[UIModel alloc] initWithTitle:@"oc vc之间数据传递" sbId:@"OcDtVC1"]];
-    
+    [_models addObject:[[UIModel alloc] initWithTitle:@"http 请求" sbId:@"ProjectViewController"]];
+    [_models addObject:[[UIModel alloc] initWithTitle:@"auto layout1" sbId:@"AutoLayoutViewController"]];
+    [_models addObject:[[UIModel alloc] initWithTitle:@"auto layout2" sbId:@"ApressFourCapterViewController"]];
+    [_models addObject:[[UIModel alloc] initWithTitle:@"auto layout3" sbId:@"ApressFiveCapterViewController"]];
     // UIModel *mo = [UIModel alloc] initWithTitle:@"分组列表" sbId:@""];
 //    [_models addObject:@"to my first"];
 //    [_models addObject:@"to my second"];
@@ -85,6 +88,7 @@
     [_tableView deselectRowAtIndexPath:indexPath animated:true];
     UIModel *model = [_models objectAtIndex:indexPath.row];
     UIViewController *vc =  [self.storyboard instantiateViewControllerWithIdentifier:model.sbId];
+    vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
 }
 
@@ -97,6 +101,11 @@
 -(void) setBackButton{
     UIBarButtonItem *backItem = [[UIBarButtonItem alloc] init];
     backItem.title = @"返回";
+    [backItem setTintColor:[UIColor whiteColor]];
+    [backItem setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]} forState:UIControlStateNormal];
+    UIImage *backImg = [UIImage imageNamed:@"NavItem_back"];
+    [backItem setBackButtonBackgroundImage:backImg forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+
     self.navigationItem.backBarButtonItem = backItem;
 }
 

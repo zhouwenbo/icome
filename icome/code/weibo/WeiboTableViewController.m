@@ -23,7 +23,7 @@
 -(void) viewDidLoad{
     [super viewDidLoad];
     [self initData];
-    CGRect rect = CGRectMake(self.view.bounds.origin.x, self.view.bounds.origin.y+64, self.view.bounds.size.width, self.view.bounds.size.height-64);
+    CGRect rect = CGRectMake(self.view.bounds.origin.x, self.view.bounds.origin.y, self.view.bounds.size.width, self.view.bounds.size.height-64);
     _tableView = [[UITableView alloc]initWithFrame:rect style:UITableViewStylePlain];
     _tableView.dataSource = self;
     _tableView.delegate = self;

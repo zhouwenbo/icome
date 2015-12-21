@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaseViewController.h"
 
-@interface ProductTableViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
+@interface ProductTableViewController : BaseViewController<UITableViewDataSource, UITableViewDelegate>
 
 
 

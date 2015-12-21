@@ -23,11 +23,12 @@
     [super viewDidLoad];
     [self initData];
     //x 相当于left y相当于top
-    CGRect rect = CGRectMake(self.view.left, self.view.top+64, self.view.width, self.view.height-64);
+    CGRect rect = CGRectMake(self.view.left, self.view.top, self.view.width, self.view.height-64);
     _tableView = [[UITableView alloc] initWithFrame:rect style:UITableViewStylePlain];
     _tableView.dataSource = self;
     _tableView.delegate = self;
     [self.view addSubview:_tableView];
+    
 }
 
 

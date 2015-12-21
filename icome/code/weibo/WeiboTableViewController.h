@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaseViewController.h"
 
 
-@interface WeiboTableViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
+@interface WeiboTableViewController : BaseViewController<UITableViewDataSource, UITableViewDelegate>
 
 
 

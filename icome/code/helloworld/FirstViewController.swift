@@ -32,7 +32,7 @@ class FirstViewController: UIViewController, UITextFieldDelegate {
 
     //添加UILable
     func addLabel() {
-        let label = UILabel(frame: CGRect(x: 20, y: 80, width: 300, height: 50))
+        let label = UILabel(frame: CGRect(x: 20, y: 20, width: 300, height: 50))
         label.text = "我知道，我来了， IOS!"
         //label.textColor = UIColor.whiteColor()
         //label.backgroundColor = UIColor.blackColor()
